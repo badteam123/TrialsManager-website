@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const allMapList = document.getElementById('all-map-list');
                 data.forEach(map => {
                     const li = document.createElement('li');
-                    li.textContent = map.name;
+                    li.textContent = map.data.name;
                     allMapList.appendChild(li);
                 });
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const newMapList = document.getElementById('new-map-list');
                 data.slice(0, 3).forEach(newMap => { // Example: first 3 items as new maps
                     const li = document.createElement('li');
-                    li.textContent = newMap.name;
+                    li.textContent = newMap.data.name;
                     newMapList.appendChild(li);
                 });
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const popularMapList = document.getElementById('popular-map-list');
                 data.slice(3, 6).forEach(popularMap => { // Example: next 3 items as popular maps
                     const li = document.createElement('li');
-                    li.textContent = popularMap.name;
+                    li.textContent = popularMap.data.name;
                     popularMapList.appendChild(li);
                 });
             })
