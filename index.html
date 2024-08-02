@@ -1,16 +1,103 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trials Maps Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            margin: 1em 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1em;
+            text-decoration: none;
+            color: #333;
+        }
+        .search-bar {
+            text-align: center;
+            margin: 1em 0;
+        }
+        .search-bar input[type="text"] {
+            width: 300px;
+            padding: 0.5em;
+        }
+        .search-bar button {
+            padding: 0.5em;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .category {
+            margin: 2em 0;
+        }
+        .category h2 {
+            margin-bottom: 0.5em;
+        }
+        .map-list {
+            list-style: none;
+            padding: 0;
+        }
+        .map-list li {
+            background-color: #fff;
+            margin: 0.5em 0;
+            padding: 1em;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
 
+<header>
+    <h1>Trials Maps Download</h1>
+</header>
+
+<nav>
+    <a href="#new">New</a>
+    <a href="#popular">Popular</a>
+</nav>
+
+<div class="search-bar">
+    <input type="text" id="search" placeholder="Search maps...">
+    <button onclick="searchMaps()">Search</button>
+</div>
+
+<div class="container">
+    <div class="category" id="new">
+        <h2>New Maps</h2>
+        <ul class="map-list">
+            <!-- New maps will be listed here -->
+        </ul>
+    </div>
+
+    <div class="category" id="popular">
+        <h2>Popular Maps</h2>
+        <ul class="map-list">
+            <!-- Popular maps will be listed here -->
+        </ul>
+    </div>
+</div>
+
+<script>
+    function searchMaps() {
+        const query = document.getElementById('search').value;
+        // Implement search functionality here
+        alert('Search for: ' + query);
+    }
+</script>
+
+</body>
 </html>
