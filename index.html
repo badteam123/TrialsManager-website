@@ -99,33 +99,7 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Function to fetch maps data from the server
-        function fetchMapsData() {
-            fetch('https://trialsmanager-server.onrender.com/maps')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok: ' + response.status);
-                    }
-                    return response.json(); // Parse response as JSON
-                })
-        };
-
-
-        // Initial fetch when the page loads
-        fetchMapsData();
-
-        // Function to handle search button click
-        function searchMaps() {
-            const query = document.getElementById('search').value;
-            alert('Search for: ' + query);
-            // You can implement search functionality here if needed
-        }
-
-        // Event listener for search button click
-        document.getElementById('search-button').addEventListener('click', searchMaps);
-    });
+<script src=script.js>
 </script>
 
 </body>
