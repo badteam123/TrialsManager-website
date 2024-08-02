@@ -66,37 +66,88 @@
 </header>
 
 <nav>
+    <a href="#all">All</a>
     <a href="#new">New</a>
     <a href="#popular">Popular</a>
 </nav>
 
 <div class="search-bar">
     <input type="text" id="search" placeholder="Search maps...">
-    <button onclick="searchMaps()">Search</button>
+    <button id="search-button">Search</button>
 </div>
 
 <div class="container">
+    <div class="category" id="all">
+        <h2>All Maps</h2>
+        <ul class="map-list" id="all-map-list">
+            <!-- All maps will be listed here -->
+        </ul>
+    </div>
+
     <div class="category" id="new">
         <h2>New Maps</h2>
-        <ul class="map-list">
+        <ul class="map-list" id="new-map-list">
             <!-- New maps will be listed here -->
         </ul>
     </div>
 
     <div class="category" id="popular">
         <h2>Popular Maps</h2>
-        <ul class="map-list">
+        <ul class="map-list" id="popular-map-list">
             <!-- Popular maps will be listed here -->
         </ul>
     </div>
 </div>
 
 <script>
-    function searchMaps() {
-        const query = document.getElementById('search').value;
-        // Implement search functionality here
-        alert('Search for: ' + query);
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to fetch maps data from the server
+        function fetchMapsData() {
+            fetch('https://trialsmanager-server.onrender.com/maps')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.status);
+                    }
+                    return response.json(); // Parse response as JSON
+                })
+                .then(data => {
+                    const allMapList = document.getElementById('all-map-list');
+                    const newMapList = document.getElementById('new-map-list');
+                    const popularMapList = document.getElementById('popular-map-list');
+
+                    // Assuming data is an array with one object in your case
+                    data.forEach(map => {
+                        const mapItem = `<li><strong>${map.data.name}</strong> (${map.data.game})</li>`;
+                        allMapList.innerHTML += mapItem;
+                        if (map.data.meta === 'new') {
+                            newMapList.innerHTML += mapItem;
+                        }
+                        // Assuming you have a condition for popular maps based on another property
+                        // Replace this condition with actual logic based on your data structure
+                        if (map.data.meta === 'popular') {
+                            popularMapList.innerHTML += mapItem;
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching maps data:', error);
+                });
+        }
+
+
+        // Initial fetch when the page loads
+        fetchMapsData();
+
+        // Function to handle search button click
+        function searchMaps() {
+            const query = document.getElementById('search').value;
+            alert('Search for: ' + query);
+            // You can implement search functionality here if needed
+        }
+
+        // Event listener for search button click
+        document.getElementById('search-button').addEventListener('click', searchMaps);
+    });
 </script>
 
 </body>
