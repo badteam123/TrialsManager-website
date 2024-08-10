@@ -54,7 +54,7 @@ async function handleSearch() {
 
         filteredMaps.forEach(map => {
             const listItem = document.createElement('li');
-            listItem.textContent = map.name; // Adjust based on your data structure
+            listItem.textContent = map.data.name; // Adjust based on your data structure
             mapList.appendChild(listItem);
         });
     } catch (error) {
