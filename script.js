@@ -1,21 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to fetch maps data from the server using XHR
+    // Function to fetch maps data from the server using Fetch
     function fetchMapsData() {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://trialsmanager-server.onrender.com/maps', true);
-        xhr.onload = function() {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                const data = JSON.parse(xhr.responseText);
+        fetch('https://trialsmanager-server.onrender.com/maps')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
                 // Process data and populate lists
                 populateMaps(data);
-            } else {
-                console.error('Request failed with status:', xhr.status);
-            }
-        };
-        xhr.onerror = function() {
-            console.error('XHR request failed');
-        };
-        xhr.send();
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
     }
 
     // Function to populate map lists
@@ -69,8 +68,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for search button click
     document.getElementById('search-button').addEventListener('click', searchMaps);
 });
-
-
-// DISCLAIMER
-// THIS CODE IS COMPLETE DOO DOO SINCE IM NOT USING FETCH
-// FETCH REQUIRES CORS TO BE UPDATED ON THE SERVER AND IM NOT DOING THAT FOR NOW, SO XHR WILL HAVE TO BE USED
