@@ -1,4 +1,5 @@
 // Function to fetch and display all maps
+var maps;
 async function fetchAndDisplayMaps(elementId) {
     try {
         const response = await fetch('https://trialsmanager-server.onrender.com/maps');
@@ -10,6 +11,7 @@ async function fetchAndDisplayMaps(elementId) {
         let jsonData;
         try {
             jsonData = JSON.parse(textData);
+            maps = jsonData;
         } catch (error) {
             console.error('Error parsing JSON:', error);
             return;
@@ -21,7 +23,11 @@ async function fetchAndDisplayMaps(elementId) {
 
         jsonData.forEach(map => {
             const listItem = document.createElement('li');
-            listItem.textContent = map.data.name; // Adjust based on your data structure
+            const link = document.createElement('a');
+            link.href = `https://trialsmanager-server.onrender.com/maps/${map.mid}`; // Adjust based on your data structure
+            link.textContent = map.data.name; // Adjust based on your data structure
+            link.target = '_blank'; // Open link in a new tab
+            listItem.appendChild(link);
             mapList.appendChild(listItem);
         });
     } catch (error) {
@@ -32,34 +38,20 @@ async function fetchAndDisplayMaps(elementId) {
 // Function to handle search
 async function handleSearch() {
     const query = document.getElementById('search').value.toLowerCase();
-    try {
-        const response = await fetch('https://trialsmanager-server.onrender.com/maps');
-        if (!response.ok) throw new Error('Network response was not ok');
+    const filteredMaps = maps.filter(map => map.data.name.toLowerCase().includes(query));
+    console.log(filteredMaps);
+    const mapList = document.getElementById('all-map-list');
+    mapList.innerHTML = ''; // Clear previous content
 
-        const textData = await response.text();
-        console.log('Raw Response for Search:', textData); // Log the raw response
-
-        let jsonData;
-        try {
-            jsonData = JSON.parse(textData);
-        } catch (error) {
-            console.error('Error parsing JSON:', error);
-            return;
-        }
-
-        // Assuming jsonData is an array of maps
-        const filteredMaps = jsonData.filter(map => map.name.toLowerCase().includes(query));
-        const mapList = document.getElementById('all-map-list');
-        mapList.innerHTML = ''; // Clear previous content
-
-        filteredMaps.forEach(map => {
-            const listItem = document.createElement('li');
-            listItem.textContent = map.data.name; // Adjust based on your data structure
-            mapList.appendChild(listItem);
-        });
-    } catch (error) {
-        console.error('Error searching maps:', error);
-    }
+    filteredMaps.forEach(map => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `https://trialsmanager-server.onrender.com/maps/${map.data._id}`; // Adjust based on your data structure
+        link.textContent = map.data.name; // Adjust based on your data structure
+        link.target = '_blank'; // Open link in a new tab
+        listItem.appendChild(link);
+        mapList.appendChild(listItem);
+    });
 }
 
 // Event listeners for page load and search button click
