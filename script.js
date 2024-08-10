@@ -46,7 +46,7 @@ async function handleSearch() {
     filteredMaps.forEach(map => {
         const listItem = document.createElement('li');
         const link = document.createElement('a');
-        link.href = `https://trialsmanager-server.onrender.com/maps/${map.data._id}`; // Adjust based on your data structure
+        link.href = `https://trialsmanager-server.onrender.com/maps/${map.mid}`; // Adjust based on your data structure
         link.textContent = map.data.name; // Adjust based on your data structure
         link.target = '_blank'; // Open link in a new tab
         listItem.appendChild(link);
