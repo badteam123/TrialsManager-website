@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trials Map Manager</title>
+    <style>
+      body {
+        background: url(blurred.png) no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      header {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+      }
+      nav {
+        margin: 1em 0;
+        text-align: center;
+      }
+      nav a {
+        margin: 0 1em;
+        text-decoration: none;
+        color: #333;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+      }
+      .description {
+        margin: 2em 0;
+      }
+      .description h2 {
+        margin-bottom: 0.5em;
+      }
+      .description p {
+        margin: 1em 0;
+        font-size: 20px;
+      }
+      .button-container {
+        margin: 2em 0;
+      }
+      .button-container a {
+        display: inline-block;
+        padding: 1em 2em;
+        color: #fff;
+        background-color: #007bff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1em;
+      }
+      .button-container a:hover {
+        background-color: #0056b3;
+      }
+      footer {
+        position: fixed;
+        text-align: center;
+        bottom: 10px;
+        height: 30px;
+        width: 100%; //or 600 pixels if you don't want it to fill the bottom of the page
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Trials Map Manager</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Maps</a>
+      <a href="#download">Manager</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <div class="container">
+      <div class="description" id="description">
+        <h2>Trials Map Manager</h2>
+        <p>
+          Trials Map Manager is a portable, simple tool to manage custom maps/tracks for Trial Games. With the servers being unpredictable, we wanted a way for people to be able to download, upload, import, export, and overall just manage tracks easily. However, if you wish to download maps from this site without the program, we offer a tutorial <a href="about.html#downloads">here</a>.<br><br>(We hate programs that clutter up systems too; we won't leave any extra files on your pc!)
+        </p>
+      </div>
+
+      <div class="button-container" id="download">
+        <a href="https://github.com/badteam123/TrialsManager" download>Download Trials Map Manager</a>
+      </div>
+    </div>
+    
+    <footer>
+      <p>
+        Created by DaRealLando123 and zpitolava22350
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
