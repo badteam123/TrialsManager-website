@@ -6,7 +6,8 @@
     <title>Trials Map Manager</title>
     <style>
       body {
-        background: url(blurred.png) no-repeat center center fixed;
+        background: url("https://cdn.glitch.global/a01eacb3-941d-4321-8f2e-905c85ffcd9d/compressed.png?v=1723481877247")
+          no-repeat center center fixed;
         background-size: cover;
         margin: 0;
         font-family: Arial, sans-serif;
@@ -33,9 +34,12 @@
       }
       .description {
         margin: 2em 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 10px;
       }
       .description h2 {
         margin-bottom: 0.5em;
+        background-color: rgba(0, 0, 0, 0.3);
       }
       .description p {
         margin: 1em 0;
@@ -48,11 +52,17 @@
         height: 30px;
         width: 100%; //or 600 pixels if you don't want it to fill the bottom of the page
       }
+
+      .important {
+        color: #9e0000;
+        border: 1px solid black;
+        padding: 5px;
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1>Trials Map About</h1>
+      <h1>TrialsManager About</h1>
     </header>
 
     <nav>
@@ -65,20 +75,59 @@
       <div class="description" id="description">
         <h2>About</h2>
         <p>
-          Trials Map Manager is an alternative way to share and play maps on Trials Games.
-          <br>
-          <br>
-          Unfortunately, during recent times, Ubisoft has been providing minimal effort to keep the Trial's game servers running.
-          <br>
-          That's why this exists. To provide an alternative way to download, upload, and manage maps.
+          TrialsManager is an alternative way to share and play tracks on
+          Trials games.
+          <br />
+          <br />
+          Unfortunately, Ubisoft has been providing minimal support to keep the
+          Trial game servers running.
+          <br />
+          That's why this exists- to provide an alternative way to download,
+          upload, and manage levels.
         </p>
+        <div>
+          <h2>Help</h2>
+          <div id="downloads">
+            <h3>Sharing [&] Playing Tracks</h3>
+            <b>This section will show how to manually install levels</b>
+            <p>
+              Playing Maps/Tracks is easy with the
+              <a href="mapmanager.html">TrialsManager program</a>, but it's
+              perfectly fine if you don't want to use it.
+              <br />
+            </p>
+            <p class="important">
+              You require TrialsManager to upload maps.
+            </p>
+            <p>
+              Step 1:<br />
+              Click on the Map you wish to download on the website.
+            </p>
+            <img
+              src="https://cdn.glitch.global/a01eacb3-941d-4321-8f2e-905c85ffcd9d/gif1.gif?v=1723483442955"
+            />
+            <p>
+              Step 2:<br />
+              Download the <a href="#file">.tmap</a> file to your corresponding game folder:<br />"Documents/TrialsFusion/SavedGames"<br />"Documents/Ubisoft/Trials
+              Evolution Gold Edition/SavedGames".
+            </p>
+            <hr />
+          </div>
+          <h2>File Format</h2>
+          <div id="file">
+            <p>
+              A .tmap file is a renamed .zip file containing level data.
+            </p>
+            <p class="important">
+              Changing the file extension to anything different will make the file unreadable to TrialsManager. 
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    
+
     <footer>
-      <p>
-        Created by DaRealLando123 and zpitolava22350
-      </p>
+      <p>Created by DaRealLando123 and zpitolava22350</p>
     </footer>
 
     <script src="script.js"></script>
