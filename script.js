@@ -4,7 +4,7 @@ async function fetchAndDisplayMaps(elementId) {
     const loadingScreen = document.getElementById('loading-screen');
     setTimeout(function(){
       loadingScreen.innerHTML = "Fetching all maps...<br>(This could take a minute if the servers are warming up)";
-    },1000);
+    },3000);
     loadingScreen.classList.add('active'); // Show loading screen
 
     try {
