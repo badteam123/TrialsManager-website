@@ -58,6 +58,19 @@
         border: 1px solid black;
         padding: 5px;
       }
+      .box-holder {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (optional) */
+}
+
+.box {
+    border: 1px solid gray;
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+}
     </style>
   </head>
   <body>
@@ -127,27 +140,32 @@
           <div id="access">
             <h2>Access Issues</h2>
             <p>
-              If running into issues downloading files with the TrialsManager
-              program, try running as administrator.
-              <br>
-              <br>
+              If running into issues with files on the TrialsManager program,
+              try running as administrator.
+              <br />
+              <br />
               If that doesn't work, try disabling your Ransomware protection.
-              <br>
-              (I know this sounds sketch but windows will block all file access to Documents with it on.)
+              <br />
+              (I know this sounds sketch but windows will block all file access
+              to Documents with it on.)
             </p>
           </div>
-          
+
           <div id="servers">
             <h2>Server Issues</h2>
             <p>
-              When fetching maps in the program or online, it can be significantly slow if the last person to load it did so a while ago.
-              <br>
-              Give it a minute to load and the servers should re-boot automatically, then you can refresh all you want with no large slowdowns.
-            </p>  
-            <p class="important">
-              Keep in mind the people running this are poor lmao, so we can't afford the highest quality 24/7 servers.
+              When fetching maps in the program or online, it can be
+              significantly slow if the last person to load it did so a while
+              ago.
+              <br />
+              Give it a minute to load and the servers should re-boot
+              automatically, then you can refresh all you want with no large
+              slowdowns.
             </p>
-        
+            <p class="important">
+              Keep in mind the people running this are poor lmao, so we can't
+              afford the highest quality 24/7 servers.
+            </p>
           </div>
 
           <div id="file">
@@ -158,12 +176,46 @@
               file unreadable to TrialsManager.
             </p>
           </div>
+          <div id="program">
+            <h2>TrialsManager Program</h2>
+            <p>
+              The TrialsManager Program is an easy way to manage Trial game
+              levels.
+            </p>
+            <img
+              src="https://cdn.glitch.global/a01eacb3-941d-4321-8f2e-905c85ffcd9d/img1.png?v=1723740514282"
+            />
+            <p>
+              In the image above, there are 3 colors each signifying where the
+              level is file-wise.
+            </p>
+            <div class="box-holder">
+              <div class="box">
+                <h2 style="color: orange">Orange</h2>
+                Uploaded Maps
+              </div>
+              <div class="box">
+                <h2 style="color: blue">Blue</h2>
+                Installed/Downloaded Maps
+              </div>
+              <div class="box">
+                <h2 style="color: white">White</h2>
+                Maps Avaliable for Download
+              </div>
+            </div>
+            <p class="important">
+              You can only un-publish maps you've uploaded yourself (obv)
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     <footer>
-      <p>Created by DaRealLando123 and zpitolava22350 | <a href="terms.html">Terms of Service</a></p>
+      <p>
+        Created by DaRealLando123 and zpitolava22350 |
+        <a href="terms.html">Terms of Service</a>
+      </p>
     </footer>
 
     <script src="script.js"></script>
