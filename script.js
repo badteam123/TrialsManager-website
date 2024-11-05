@@ -30,7 +30,7 @@ async function fetchAndDisplayMaps(elementId) {
         jsonData.forEach((map) => {
             const listItem = document.createElement("li");
             const link = document.createElement("a");
-            link.href = `https://trialsmanager-server.onrender.com/maps/${map.mid}`; // Adjust based on your data structure
+            link.href = `https://trialsmanager.wikinothow.workers.dev/maps/${map.mid}`; // Adjust based on your data structure
             let tempName;
             if (map.data.game === 0) {
                 tempName = "Fusion";
@@ -63,7 +63,7 @@ async function handleSearch() {
     filteredMaps.forEach((map) => {
         const listItem = document.createElement("li");
         const link = document.createElement("a");
-        link.href = `https://trialsmanager-server.onrender.com/maps/${map.mid}`; // Adjust based on your data structure
+        link.href = `https://trialsmanager.wikinothow.workers.dev/maps/${map.mid}`; // Adjust based on your data structure
         let tempName;
         if (map.data.game === 0) {
             tempName = "Fusion";
