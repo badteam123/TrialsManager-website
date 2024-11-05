@@ -32,13 +32,13 @@ async function fetchAndDisplayMaps(elementId) {
             const link = document.createElement("a");
             link.href = `https://trialsmanager.wikinothow.workers.dev/maps/${map.mid}`; // Adjust based on your data structure
             let tempName;
-            if (map.data.game === 0) {
+            if (map.game === 0) {
                 tempName = "Fusion";
             }
-            if (map.data.game === 1) {
+            if (map.game === 1) {
                 tempName = "Evolution";
             }
-            link.textContent = `Trials ${tempName} | ${map.data.name}`; // Adjust based on your data structure
+            link.textContent = `Trials ${tempName} | ${map.name}`; // Adjust based on your data structure
             link.target = "_blank"; // Open link in a new tab
             listItem.appendChild(link);
             mapList.appendChild(listItem);
@@ -54,7 +54,7 @@ async function fetchAndDisplayMaps(elementId) {
 async function handleSearch() {
     const query = document.getElementById("search").value.toLowerCase();
     const filteredMaps = maps.filter((map) =>
-        map.data.name.toLowerCase().includes(query)
+        map.name.toLowerCase().includes(query)
     );
     console.log(filteredMaps);
     const mapList = document.getElementById("all-map-list");
@@ -65,13 +65,13 @@ async function handleSearch() {
         const link = document.createElement("a");
         link.href = `https://trialsmanager.wikinothow.workers.dev/maps/${map.mid}`; // Adjust based on your data structure
         let tempName;
-        if (map.data.game === 0) {
+        if (map.game === 0) {
             tempName = "Fusion";
         }
-        if (map.data.game === 1) {
+        if (map.game === 1) {
             tempName = "Evolution";
         }
-        link.textContent = `Trials ${tempName} | ${map.data.name}`; // Adjust based on your data structure
+        link.textContent = `Trials ${tempName} | ${map.name}`; // Adjust based on your data structure
         link.target = "_blank"; // Open link in a new tab
         listItem.appendChild(link);
         mapList.appendChild(listItem);
