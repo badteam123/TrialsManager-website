@@ -8,7 +8,7 @@ async function fetchAndDisplayMaps(elementId) {
     loadingScreen.classList.add('active'); // Show loading screen
 
     try {
-        const response = await fetch("https://trialsmanager.wikinothow.workers.dev/");
+        const response = await fetch("https://trialsmanager.wikinothow.workers.dev/maps");
         if (!response.ok) throw new Error("Network response was not ok");
 
         const textData = await response.text();
