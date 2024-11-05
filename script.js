@@ -32,10 +32,10 @@ async function fetchAndDisplayMaps(elementId) {
             const link = document.createElement("a");
             link.href = `https://trialsmanager.wikinothow.workers.dev/maps/${map.mid}`; // Adjust based on your data structure
             let tempName;
-            if (map.game === 0) {
+            if (map.game == 0) {
                 tempName = "Fusion";
             }
-            if (map.game === 1) {
+            if (map.game == 1) {
                 tempName = "Evolution";
             }
             link.textContent = `Trials ${tempName} | ${map.name}`; // Adjust based on your data structure
